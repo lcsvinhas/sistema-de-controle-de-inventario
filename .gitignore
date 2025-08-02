@@ -1,0 +1,574 @@
+# ====================
+# .NET Core / .NET 5+ / .NET Framework
+# ====================
+
+# Resultados de compilação
+[Dd]ebug/
+[Rr]elease/
+[Dd]ebugPublic/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Diretório de cache/opções do Visual Studio 2015/2017/2019/2022
+.vs/
+
+# Arquivos específicos do usuário
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Arquivos específicos do usuário (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Arquivos gerados automaticamente pelo Mono
+mono_crash.*
+
+# Arquivos gerados automaticamente pelo Visual Studio 2017
+Generated\ Files/
+
+# Resultados de testes MSTest
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Resultados de compilação de um projeto ATL
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+# Resultados de Benchmark
+BenchmarkDotNet.Artifacts/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Scaffolding do ASP.NET
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# Arquivos compilados pelo Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Arquivos de teste Chutzpah
+_Chutzpah*
+
+# Arquivos de cache do Visual C++
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+
+# Profiler do Visual Studio
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Arquivos de rastreamento do Visual Studio
+*.e2e
+
+# Workspace local do TFS 2012
+$tf/
+
+# Guidance Automation Toolkit
+*.gpState
+
+# ReSharper é um add-in de codificação .NET
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# TeamCity é um add-in de build
+_TeamCity*
+
+# DotCover é uma ferramenta de cobertura de código
+*.dotCover
+
+# AxoCover é uma ferramenta de cobertura de código
+.axoCover/*
+!.axoCover/settings.json
+
+# Coverlet é uma ferramenta gratuita e multiplataforma de cobertura de código
+coverage*.json
+coverage*.xml
+coverage*.info
+
+# Resultados de cobertura de código do Visual Studio
+*.coverage
+*.coveragexml
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# MightyMoose
+*.mm.*
+AutoTest.Net/
+
+# Web workbench (sass)
+.sass-cache/
+
+# Pasta de saída do Installshield
+[Ee]xpress/
+
+# DocProject é um add-in gerador de documentação
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/Html2
+DocProject/Help/html
+
+# Diretório Click-Once
+publish/
+
+# Saída de publicação Web
+*.[Pp]ublish.xml
+*.azurePubxml
+# Nota: Comente a próxima linha se quiser fazer check-in das configurações de deploy web,
+# mas strings de conexão de banco (com possíveis senhas) ficarão descriptografadas
+*.pubxml
+*.publishproj
+
+# Configurações de publicação do Microsoft Azure Web App. Comente a próxima linha se quiser
+# fazer check-in das configurações do Azure Web App, mas informações sensíveis contidas
+# nesses scripts ficarão descriptografadas
+PublishScripts/
+
+# Pacotes NuGet
+*.nupkg
+# Pacotes de símbolos NuGet
+*.snupkg
+# A pasta packages pode ser ignorada por causa do Package Restore
+**/[Pp]ackages/*
+# exceto build/, que é usado como target do MSBuild.
+!**/[Pp]ackages/build/
+# Descomente se necessário, mas geralmente será regenerado quando necessário
+#!**/[Pp]ackages/repositories.config
+# Arquivos project.json do NuGet v3 produzem mais arquivos ignoráveis
+*.nuget.props
+*.nuget.targets
+
+# Tokens de acesso pessoal e credenciais do Nuget
+nuget.config
+
+# Saída de compilação do Microsoft Azure
+csx/
+*.build.csdef
+
+# Emulador do Microsoft Azure
+ecf/
+rcf/
+
+# Diretórios e arquivos de pacotes de apps da Windows Store
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+*.appx
+*.appxbundle
+*.appxupload
+
+# Arquivos de cache do Visual Studio
+# arquivos terminados em .cache podem ser ignorados
+*.[Cc]ache
+# mas manter o controle de diretórios terminados em .cache
+!?*.[Cc]ache/
+
+# Outros
+ClientBin/
+~$*
+*~
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+
+# Incluir arquivos de strong name pode apresentar um risco de segurança
+# (https://github.com/github/gitignore/pull/2483#issue-259490424)
+#*.snk
+
+# Como existem múltiplos workflows, descomente a próxima linha para ignorar bower_components
+# (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
+#bower_components/
+
+# Projetos RIA/Silverlight
+Generated_Code/
+
+# Arquivos de backup e relatório da conversão de um arquivo de projeto antigo
+# para uma versão mais nova do Visual Studio. Arquivos de backup não são necessários,
+# porque temos git ;-)
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+ServiceFabricBackup/
+*.rptproj.bak
+
+# Arquivos do SQL Server
+*.mdf
+*.ldf
+*.ndf
+
+# Projetos de Business Intelligence
+*.rdl.data
+*.bim.layout
+*.bim_*.settings
+*.rptproj.rsuser
+*- [Bb]ackup.rdl
+*- [Bb]ackup ([0-9]).rdl
+*- [Bb]ackup ([0-9][0-9]).rdl
+
+# Microsoft Fakes
+FakesAssemblies/
+
+# Arquivo de configuração do plugin GhostDoc
+*.GhostDoc.xml
+
+# Ferramentas Node.js para Visual Studio
+.ntvs_analysis.dat
+node_modules/
+
+# Log de compilação do Visual Studio 6
+*.plg
+
+# Arquivo de opções do workspace do Visual Studio 6
+*.opt
+
+# Arquivo de workspace gerado automaticamente pelo Visual Studio 6 (contém quais arquivos estavam abertos etc.)
+*.vbw
+
+# Saída de compilação do Visual Studio LightSwitch
+**/*.HTMLClient/GeneratedArtifacts
+**/*.DesktopClient/GeneratedArtifacts
+**/*.DesktopClient/ModelManifest.xml
+**/*.Server/GeneratedArtifacts
+**/*.Server/ModelManifest.xml
+_Pvt_Extensions
+
+# Gerenciador de dependências Paket
+.paket/paket.exe
+paket-files/
+
+# FAKE - F# Make
+.fake/
+
+# Configurações pessoais do CodeRush
+.cr/personal
+
+# Ferramentas Python para Visual Studio (PTVS)
+__pycache__/
+*.pyc
+
+# Cake - Descomente se estiver usando
+# tools/**
+# !tools/packages.config
+
+# Tabs Studio
+*.tss
+
+# Arquivo de configuração do Telerik's JustMock
+*.jmconfig
+
+# Saída de compilação do BizTalk
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
+
+# Resultados de análise da UI do OpenCover
+OpenCover/
+
+# Saída de execução local do Azure Stream Analytics
+ASALocalRun/
+
+# Log binário e estruturado do MSBuild
+*.binlog
+
+# Arquivo de configuração do debugger GPU NVidia Nsight
+*.nvuser
+
+# Pasta de trabalho do MFractors (ferramenta de produtividade Xamarin)
+.mfractor/
+
+# Histórico local para Visual Studio
+.localhistory/
+
+# Banco de dados temporário de healthcheck do BeatPulse
+healthchecksdb
+
+# Pasta de backup para ferramenta Package Reference Convert no Visual Studio 2017
+MigrationBackup/
+
+# Pasta de trabalho do Ionide (ferramentas F# VS Code multiplataforma)
+.ionide/
+
+# Esquema XML gerado automaticamente pelo Fody
+FodyWeavers.xsd
+
+# Arquivos do VS Code para quem trabalha com múltiplas ferramentas
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Histórico local para Visual Studio Code
+.history/
+
+# Arquivos do Windows Installer das saídas de compilação
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# ====================
+# Arquivos do Sistema Operacional
+# ====================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ====================
+# Ferramentas de Desenvolvimento
+# ====================
+
+# Docker
+Dockerfile.override
+docker-compose.override.yml
+.dockerignore
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dados de runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diretório de cobertura usado por ferramentas como istanbul
+coverage/
+*.lcov
+
+# Cobertura de teste nyc
+.nyc_output
+
+# Armazenamento intermediário do Grunt
+.grunt
+
+# Diretório de dependências Bower
+bower_components
+
+# Configuração node-waf
+.lock-wscript
+
+# Addons binários compilados
+build/Release
+
+# Diretórios de dependências
+node_modules/
+jspm_packages/
+
+# Diretório de dependências Snowpack
+web_modules/
+
+# Cache TypeScript
+*.tsbuildinfo
+
+# Diretório de cache npm opcional
+.npm
+
+# Cache eslint opcional
+.eslintcache
+
+# Cache Microbundle
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Histórico REPL opcional
+.node_repl_history
+
+# Saída de 'npm pack'
+*.tgz
+
+# Arquivo de integridade Yarn
+.yarn-integrity
+
+# Arquivo de variáveis de ambiente dotenv
+.env
+.env.test
+
+# Cache parcel-bundler
+.cache
+.parcel-cache
+
+# Saída de build Next.js
+.next
+
+# Saída de build / generate Nuxt.js
+.nuxt
+dist
+
+# Arquivos Gatsby
+.cache/
+public
+
+# Saídas de build Storybook
+.out
+.storybook-out
+
+# Pastas temporárias
+tmp/
+temp/
+
+# ====================
+# Arquivos de Banco de Dados
+# ====================
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+
+# ====================
+# Arquivos de Configuração (cuidado com secrets)
+# ====================
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+# Descomente se quiser ignorar todos os arquivos appsettings exceto o template
+# appsettings*.json
+# !appsettings.json
+
+# Secrets
+secrets.json
+*.secrets.json
+
+# ====================
+# Certificados e Chaves
+# ====================
+*.p12
+*.key
+*.crt
+*.cer
+*.pem
+
+# ====================
+# Arquivos Personalizados do Projeto
+# ====================
+# Adicione suas regras específicas do projeto aqui
+# Exemplo:
+# /pasta-personalizada/
+# *.extensao-personalizada
