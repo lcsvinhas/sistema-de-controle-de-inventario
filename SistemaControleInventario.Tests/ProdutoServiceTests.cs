@@ -39,5 +39,41 @@ namespace SistemaControleInventario.Tests
             Assert.Equal(dto.Estoque, result.Estoque);
             Assert.Equal(dto.EstoqueMinimo, result.EstoqueMinimo);
         }
+
+        [Fact(DisplayName = "Teste 2: Obter todas as entidades cadastradas")]
+        public async Task ListarProdutos()
+        {
+            var produtos = new List<Produto>
+            {
+                new Produto("Mouse", "Mouse ergonômico sem fio com sensor de alta precisão", 20, 5),
+                new Produto("Teclado", "Teclado mecânico", 15, 3)
+            };
+
+            _mock.Setup(p => p.FindAll()).ReturnsAsync(produtos);
+
+            var resultado = await _service.ListarProdutos();
+
+            Assert.NotNull(resultado);
+            Assert.Equal(2, resultado.Count);
+
+            var lista = resultado.ToList();
+            Assert.Equal("Mouse", lista[0].Nome);
+            Assert.Equal("Teclado", lista[1].Nome);
+        }
+
+        [Fact(DisplayName = "Teste 3: Obter entidade por id")]
+        public async Task ListarPorId()
+        {
+            var produto = new Produto("Mouse", "Mouse ergonômico sem fio com sensor de alta precisão", 20, 5);
+            typeof(Produto).GetProperty("Id")!.SetValue(produto, 1);
+
+            _mock.Setup(p => p.FindById(1)).ReturnsAsync(produto);
+
+            var resultado = await _service.ListarPorId(1);
+
+            Assert.NotNull(resultado);
+            Assert.Equal(1, resultado.Id);
+            Assert.Equal("Mouse", resultado.Nome);
+        }
     }
 }
