@@ -21,13 +21,14 @@ namespace SistemaControleInventario.UserInterface.Middlewares
             }
             catch (ProdutoException ex)
             {
-                await HandleExceptionAsync(context, ex);
+                await HandleExceptionAsync(context, ex, HttpStatusCode.NotFound);
             }
         }
 
-        private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+        private static Task HandleExceptionAsync(HttpContext context, Exception exception, HttpStatusCode statusCode)
         {
             context.Response.ContentType = "application/json";
+            context.Response.StatusCode = (int)statusCode;
 
             var result = JsonSerializer.Serialize(exception.Message);
 

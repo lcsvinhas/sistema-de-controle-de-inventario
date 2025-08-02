@@ -36,7 +36,7 @@ namespace SistemaControleInventario.UserInterface.Controllers
             return Ok(await _produtoService.ListarPorId(id));
         }
 
-        [HttpPut("{id}/atualizar")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> AtualizarProduto(int id, ProdutoRequestDTO dto)
         {
             if (!ModelState.IsValid)
@@ -45,6 +45,13 @@ namespace SistemaControleInventario.UserInterface.Controllers
             }
 
             return Ok(await _produtoService.AtualizarProduto(id, dto));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletarProduto(int id)
+        {
+            await _produtoService.DeletarProduto(id);
+            return NoContent();
         }
     }
 }

@@ -62,5 +62,19 @@ namespace SistemaControleInventario.Application.Services
 
             return new ProdutoResponseDTO(produto.Id, produto.Nome, produto.Descricao, produto.Estoque, produto.EstoqueMinimo);
         }
+
+        public async Task DeletarProduto(int id)
+        {
+            var produto = await _produtoRepository.FindById(id);
+
+            if (produto == null)
+            {
+                throw new ProdutoException("Produto inexistente.");
+            }
+
+            produto.Ativo = false;
+
+            await _produtoRepository.Update(produto);
+        }
     }
 }
