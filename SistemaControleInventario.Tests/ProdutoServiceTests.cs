@@ -102,5 +102,21 @@ namespace SistemaControleInventario.Tests
             Assert.Equal(dtoAtualizado.Estoque, resultado.Estoque);
             Assert.Equal(dtoAtualizado.EstoqueMinimo, resultado.EstoqueMinimo);
         }
+
+        [Fact(DisplayName = "Teste 5: Deletar uma entidade existente")]
+        public async Task DeletarProduto()
+        {
+            var produtoExistente = new Produto("Mouse", "Mouse ergonômico sem fio com sensor de alta precisão", 20, 5);
+            typeof(Produto).GetProperty("Id")!.SetValue(produtoExistente, 1);
+
+            _mock.Setup(p => p.FindById(1)).ReturnsAsync(produtoExistente);
+            _mock.Setup(p => p.Update(It.IsAny<Produto>())).Returns(Task.CompletedTask);
+
+            await _service.DeletarProduto(1);
+
+            _mock.Verify(p => p.FindById(1), Times.Once);
+
+            _mock.Verify(p => p.Update(It.Is<Produto>(prod => prod.Id == 1 && prod.Ativo == false)), Times.Once);
+        }
     }
 }
