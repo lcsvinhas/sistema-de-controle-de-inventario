@@ -41,5 +41,26 @@ namespace SistemaControleInventario.Application.Services
 
             return new ProdutoResponseDTO(produto.Id, produto.Nome, produto.Descricao, produto.Estoque, produto.EstoqueMinimo);
         }
+
+        public async Task<ProdutoResponseDTO> AtualizarProduto(int id, ProdutoRequestDTO dto)
+        {
+            var produto = await _produtoRepository.FindById(id);
+
+            if (produto == null)
+            {
+                throw new ProdutoException("Produto inexistente.");
+            }
+
+            produto.Nome = dto.Nome;
+            produto.Descricao = dto.Descricao;
+            produto.Estoque = dto.Estoque;
+            produto.EstoqueMinimo = dto.EstoqueMinimo;
+            produto.Ativo = true;
+
+            await _produtoRepository.Update(produto);
+
+
+            return new ProdutoResponseDTO(produto.Id, produto.Nome, produto.Descricao, produto.Estoque, produto.EstoqueMinimo);
+        }
     }
 }

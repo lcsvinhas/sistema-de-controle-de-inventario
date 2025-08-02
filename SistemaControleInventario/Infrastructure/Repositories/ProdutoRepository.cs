@@ -51,7 +51,7 @@ namespace SistemaControleInventario.Infrastructure.Repositories
                 nome = @Nome,
                 descricao = @Descricao,
                 estoque = @Estoque,
-                estoque_minimo = @EstoqueMinimo,
+                estoque_minimo = @EstoqueMinimo
             where id = @Id
             ";
             await con.ExecuteAsync(sql, produto);
