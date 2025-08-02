@@ -30,5 +30,23 @@ namespace SistemaControleInventario.Domain.Entities
             Estoque = estoque;
             EstoqueMinimo = estoqueMinimo;
         }
+
+        public void Atualizar(string nome, string descricao, int estoque, int estoqueMinimo)
+        {
+            if (nome == null || nome == "")
+                throw new ArgumentException("Nome do produto é obrigatório.");
+
+            if (estoque < 0)
+                throw new ArgumentException("Estoque deve ser maior ou igual a zero.");
+
+            if (estoqueMinimo < 0)
+                throw new ArgumentException("Estoque mínimo deve ser maior ou igual a zero.");
+
+            Ativo = true;
+            Nome = nome;
+            Descricao = descricao;
+            Estoque = estoque;
+            EstoqueMinimo = estoqueMinimo;
+        }
     }
 }

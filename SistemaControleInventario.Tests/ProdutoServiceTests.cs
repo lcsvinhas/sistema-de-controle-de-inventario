@@ -75,5 +75,32 @@ namespace SistemaControleInventario.Tests
             Assert.Equal(1, resultado.Id);
             Assert.Equal("Mouse", resultado.Nome);
         }
+
+        [Fact(DisplayName = "Teste 4: Atualizar uma entidade existente")]
+        public async Task AtualizarProduto()
+        {
+            var produtoExistente = new Produto("Mouse", "Mouse ergonômico sem fio com sensor de alta precisão", 20, 5);
+            typeof(Produto).GetProperty("Id")!.SetValue(produtoExistente, 1);
+
+            var dtoAtualizado = new ProdutoRequestDTO
+            {
+                Nome = "Mouse Logitech",
+                Descricao = "Mouse atualizado",
+                Estoque = 15,
+                EstoqueMinimo = 3
+            };
+
+            _mock.Setup(p => p.FindById(1)).ReturnsAsync(produtoExistente);
+            _mock.Setup(p => p.Update(It.IsAny<Produto>())).Returns(Task.CompletedTask);
+
+            var resultado = await _service.AtualizarProduto(1, dtoAtualizado);
+
+            Assert.NotNull(resultado);
+            Assert.Equal(produtoExistente.Id, resultado.Id);
+            Assert.Equal(dtoAtualizado.Nome, resultado.Nome);
+            Assert.Equal(dtoAtualizado.Descricao, resultado.Descricao);
+            Assert.Equal(dtoAtualizado.Estoque, resultado.Estoque);
+            Assert.Equal(dtoAtualizado.EstoqueMinimo, resultado.EstoqueMinimo);
+        }
     }
 }

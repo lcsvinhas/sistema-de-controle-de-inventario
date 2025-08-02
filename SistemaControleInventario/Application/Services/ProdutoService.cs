@@ -56,6 +56,7 @@ namespace SistemaControleInventario.Application.Services
             produto.Estoque = dto.Estoque;
             produto.EstoqueMinimo = dto.EstoqueMinimo;
             produto.Ativo = true;
+            produto.Atualizar(dto.Nome, dto.Descricao, dto.Estoque, dto.EstoqueMinimo);
 
             await _produtoRepository.Update(produto);
 
