@@ -23,5 +23,17 @@ namespace SistemaControleInventario.UserInterface.Controllers
 
             return Ok(await _produtoService.AdicionarProduto(dto));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> ListarProdutos()
+        {
+            return Ok(await _produtoService.ListarProdutos());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ListarPorId(int id)
+        {
+            return Ok(await _produtoService.ListarPorId(id));
+        }
     }
 }

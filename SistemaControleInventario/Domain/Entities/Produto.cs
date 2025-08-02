@@ -9,6 +9,8 @@
         public int Estoque { get; private set; }
         public int EstoqueMinimo { get; private set; }
 
+        public Produto() { }
+
         public Produto(string nome, string descricao, int estoque, int estoqueMinimo)
         {
             Ativo = true;

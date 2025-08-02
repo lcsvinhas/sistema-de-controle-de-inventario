@@ -1,6 +1,7 @@
 using SistemaControleInventario.Application.Services;
 using SistemaControleInventario.Domain.Repositories;
 using SistemaControleInventario.Infrastructure.Repositories;
+using SistemaControleInventario.UserInterface.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthorization();
 
