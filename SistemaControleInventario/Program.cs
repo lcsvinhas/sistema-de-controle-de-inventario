@@ -1,3 +1,4 @@
+using SistemaControleInventario.Application.Services;
 using SistemaControleInventario.Domain.Repositories;
 using SistemaControleInventario.Infrastructure.Repositories;
 
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("Postgres");
 builder.Services.AddScoped<IProdutoRepository>(options => new ProdutoRepository(connectionString));
+builder.Services.AddScoped<ProdutoService>();
 
 var app = builder.Build();
 
