@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaControleInventario.Application.DTOs;
 using SistemaControleInventario.Application.Services;
 
@@ -6,6 +7,7 @@ namespace SistemaControleInventario.UserInterface.Controllers
 {
     [Route("produtos")]
     [ApiController]
+    [Authorize]
     public class ProdutoController : ControllerBase
     {
         private readonly ProdutoService _produtoService;

@@ -27,6 +27,14 @@ namespace SistemaControleInventario.UserInterface.Middlewares
             {
                 await HandleExceptionAsync(context, ex, HttpStatusCode.NotFound);
             }
+            catch (UsuarioException ex)
+            {
+                await HandleExceptionAsync(context, ex, HttpStatusCode.NotFound);
+            }
+            catch (AuthException ex)
+            {
+                await HandleExceptionAsync(context, ex, HttpStatusCode.NotFound);
+            }
         }
 
         private static Task HandleExceptionAsync(HttpContext context, Exception exception, HttpStatusCode statusCode)

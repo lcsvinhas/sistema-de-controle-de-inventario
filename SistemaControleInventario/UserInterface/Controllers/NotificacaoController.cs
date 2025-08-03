@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaControleInventario.Application.Services;
 
 namespace SistemaControleInventario.UserInterface.Controllers
 {
     [Route("notificacoes")]
     [ApiController]
+    [Authorize]
     public class NotificacaoController : ControllerBase
     {
         private readonly NotificacaoService _service;
