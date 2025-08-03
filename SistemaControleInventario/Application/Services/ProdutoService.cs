@@ -2,16 +2,19 @@
 using SistemaControleInventario.Application.Exceptions;
 using SistemaControleInventario.Domain.Entities;
 using SistemaControleInventario.Domain.Repositories;
+using SistemaControleInventario.Infrastructure.Messaging.Producers;
 
 namespace SistemaControleInventario.Application.Services
 {
     public class ProdutoService
     {
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IEstoqueProducer _estoqueProducer;
 
-        public ProdutoService(IProdutoRepository produtoRepository)
+        public ProdutoService(IProdutoRepository produtoRepository, IEstoqueProducer estoqueProducer)
         {
             _produtoRepository = produtoRepository;
+            _estoqueProducer = estoqueProducer;
         }
 
         public async Task<ProdutoResponseDTO> AdicionarProduto(ProdutoRequestDTO dto)
@@ -19,6 +22,11 @@ namespace SistemaControleInventario.Application.Services
             var produto = new Produto(dto.Nome, dto.Descricao, dto.Estoque, dto.EstoqueMinimo);
 
             await _produtoRepository.Save(produto);
+
+            if (produto.Estoque < produto.EstoqueMinimo)
+            {
+                await _estoqueProducer.EnviarMensagemEstoqueBaixo(produto);
+            }
 
             return new ProdutoResponseDTO(produto.Id, produto.Nome, produto.Descricao, produto.Estoque, produto.EstoqueMinimo);
         }
@@ -60,6 +68,14 @@ namespace SistemaControleInventario.Application.Services
 
             await _produtoRepository.Update(produto);
 
+            if (produto.Estoque < produto.EstoqueMinimo)
+            {
+                await _estoqueProducer.EnviarMensagemEstoqueBaixo(produto);
+            }
+            else
+            {
+                await _estoqueProducer.EnviarMensagemProdutoAtualizado(produto);
+            }
 
             return new ProdutoResponseDTO(produto.Id, produto.Nome, produto.Descricao, produto.Estoque, produto.EstoqueMinimo);
         }

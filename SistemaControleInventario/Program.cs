@@ -1,6 +1,10 @@
+using Microsoft.Extensions.Options;
 using SistemaControleInventario.Application.Services;
 using SistemaControleInventario.Domain.Repositories;
+using SistemaControleInventario.Infrastructure.Messaging.Consumers;
+using SistemaControleInventario.Infrastructure.Messaging.Producers;
 using SistemaControleInventario.Infrastructure.Repositories;
+using SistemaControleInventario.Infrastructure.Settings;
 using SistemaControleInventario.UserInterface.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +19,11 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("Postgres");
 builder.Services.AddScoped<IProdutoRepository>(options => new ProdutoRepository(connectionString));
 builder.Services.AddScoped<ProdutoService>();
+
+builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQ"));
+builder.Services.AddHostedService<EstoqueConsumer>();
+builder.Services.AddSingleton<IEstoqueProducer, EstoqueProducer>();
+builder.Services.AddScoped<INotificacaoRepository>(options => new NotificacaoRepository(connectionString));
 
 var app = builder.Build();
 
