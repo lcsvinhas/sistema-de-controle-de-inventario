@@ -25,6 +25,8 @@ builder.Services.AddHostedService<EstoqueConsumer>();
 builder.Services.AddSingleton<IEstoqueProducer, EstoqueProducer>();
 builder.Services.AddScoped<INotificacaoRepository>(options => new NotificacaoRepository(connectionString));
 
+builder.Services.AddScoped<NotificacaoService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

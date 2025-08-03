@@ -25,7 +25,7 @@ public class NotificacaoRepository : INotificacaoRepository
     public async Task<IEnumerable<Notificacao>> FindAll()
     {
         using var con = GetConnection();
-        var sql = "select * from notificacoes order by data_criacao desc";
+        var sql = "SELECT id, mensagem, data_criacao AS DataCriacao, lida FROM notificacoes order by data_criacao desc";
         return await con.QueryAsync<Notificacao>(sql);
     }
 

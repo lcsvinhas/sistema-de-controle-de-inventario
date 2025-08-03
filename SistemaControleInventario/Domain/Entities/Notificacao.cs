@@ -6,6 +6,7 @@
         public string Mensagem { get; set; }
         public DateTime DataCriacao { get; set; }
         public bool Lida { get; set; }
+        public Notificacao() { }
 
         public Notificacao(string mensagem)
         { 

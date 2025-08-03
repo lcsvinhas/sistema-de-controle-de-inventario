@@ -23,6 +23,10 @@ namespace SistemaControleInventario.UserInterface.Middlewares
             {
                 await HandleExceptionAsync(context, ex, HttpStatusCode.NotFound);
             }
+            catch (NotificacaoException ex)
+            {
+                await HandleExceptionAsync(context, ex, HttpStatusCode.NotFound);
+            }
         }
 
         private static Task HandleExceptionAsync(HttpContext context, Exception exception, HttpStatusCode statusCode)
